@@ -13,7 +13,7 @@ During this week I had navigated through multiple tools used to identify propert
 ### 4. Evidence:
         To find the Indicators and come to the conclusion that this is in fact malware I initially ran the program with strings. This showed some of the functions that were occuring such as the attempt to connect to a network. I also ran the program through PEid which displayed all of the malware fuctions being used and I was able to google the purpose of it all.
 
-##Lab 1 - 2
+## Lab 1 - 2
 
 ### 1. Executive Summary:
         Through examining this program using different tools, it was found that it is malware. This malware also manipulates files and access the advanced core windows components like the registry.
