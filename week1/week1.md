@@ -1,8 +1,8 @@
-#Week 1 - Simple Static Analysis
+# Week 1 - Simple Static Analysis
 
 During this week I had navigated through multiple tools used to identify properties of malware and dive deeper into how malware is disguised and used. I used the tools Strings, PEid virustotal, and resourcehacker. I learned about how malware can be packed or obfuscated to diguise itself and make it harder for malware analysts. I also learned about the common functions that malware uses.
 
-##Lab 1 - 1
+## Lab 1 - 1
 
 ### 1. Executive Summary:
         Through examining the program using different tools, it is found that this program is malware. The malware is contacting some IP address. It is also manipulates files.
