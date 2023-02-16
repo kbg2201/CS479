@@ -39,3 +39,4 @@ To start off with this analysis I ran it through virustotal and it was flagged t
 
     
 ### 4. Evidence:
+To first analyze this malware I ran it through virus total and it was caught by 61 detectors. It also showed that it was packed using c++. it alos showed a keylogger name. Next strings found nothing helpful and just bunch od random characters that were screaming at me.
