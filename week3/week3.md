@@ -3,15 +3,16 @@
 ## Lab 3 - 1    
 ### 1. Executive Summary:
 
-
+In summary this malware was trying to reach an outside network and go to the website www.practicalmalware.com
         
 ### 2. Indicators of Compromise:
-
+The indicators of compromise were actually nothing because when I ran the malware nothing noticible occured but when I used strings to analyze the malware I unfolded all of its red flags like accessing the website.
 ### 3. Mitigations:
-
+Turn off the network connection so it doesnt reach untrusted websites.
 ### 4. Evidence:
 
-The beginning of investigating this malware started with running it through virus total since its just a fast general way to gather first inpressions. Immediately it is recognized as malware and shows it was packed with PEninja also shows something is flagged with win32. to get mmore specific I ran the file with dependency walker. Dependency walker showed the kernel32 function known to manipulate memory, files, and hardware.Next, I ran it with strings and another function that appeared is ws2_32.dll used for connecting to a network. That makes sense because virus total also detected communication with an ip address. Strings also showed a website www.practicalmalwareanalysis.com and some folderpaths being accessed. I finally began testing the malware dynamically by starting wireshark and running the malware to observe what was occuring. I observed that the protocol ssdp appeared which i observed that the protocol ssdp appeared which i googled and it came up for discovering network services. I believe that to reaffirm the fact that the malware is attempting to contact another network. I googled and it came up for discovering network services. I believe that to reaffirm the fact that the malware is attempting to contact another network. When using regshot there were 10 changes although im not sure what the significance of that is.
+The beginning of investigating this malware started with running it through virus total since its just a fast general way to gather first inpressions. Immediately it is recognized as malware and shows it was packed with PEninja also shows something is flagged with win32. To get more specific I ran the file with dependency walker. Dependency walker showed the kernel32 function known to manipulate memory, files, and hardware. Next, I ran it with strings and another function that appeared is ws2_32.dll used for connecting to a network. That makes sense because virus total also detected communication with an ip address. Strings also showed a website: 
+www.practicalmalwareanalysis.com, and some folderpaths being accessed. I finally began testing the malware dynamically by starting wireshark and running the malware to observe what was occuring. I observed that the protocol ssdp appeared which i observed that the protocol ssdp appeared which i googled and it came up for discovering network services. I believe that to reaffirm the fact that the malware is attempting to contact another network. I googled and it came up for discovering network services. I believe that to reaffirm the fact that the malware is attempting to contact another network. When using regshot there were 10 changes although im not sure what the significance of that is.
 
 # Lab 3 - 2
 ### 1. Executive Summary:
