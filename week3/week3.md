@@ -3,12 +3,12 @@
 ## Lab 3 - 1    
 ### 1. Executive Summary:
 
-In summary this malware was trying to reach an outside network and go to the website www.practicalmalware.com
+In summary, this malware was trying to reach an outside network and go to the website www.practicalmalware.com
         
 ### 2. Indicators of Compromise:
 The indicators of compromise were actually nothing because when I ran the malware nothing noticible occured but when I used strings to analyze the malware I unfolded all of its red flags like accessing the website.
 ### 3. Mitigations:
-Turn off the network connection so it doesnt reach untrusted websites.
+Turn off the network connection so it doesn't reach untrusted websites.
 ### 4. Evidence:
 
 The beginning of investigating this malware started with running it through virus total since its just a fast general way to gather first inpressions. Immediately it is recognized as malware and shows it was packed with PEninja also shows something is flagged with win32. To get more specific I ran the file with dependency walker. Dependency walker showed the kernel32 function known to manipulate memory, files, and hardware. Next, I ran it with strings and another function that appeared is ws2_32.dll used for connecting to a network. That makes sense because virus total also detected communication with an ip address. Strings also showed a website: 
@@ -16,14 +16,11 @@ www.practicalmalwareanalysis.com, and some folderpaths being accessed. I finally
 
 # Lab 3 - 2
 ### 1. Executive Summary:
-
-        
+In summary, this malware was creating threads and trying to contact a website.
 ### 2. Indicators of Compromise:
-
-        
+I was unable to run this malware because it was a .dll file but the indicatore that I saw was the operations of the functions such as accessing addresses and creating threads.
 ### 3. Mitigations:
-
-    
+To stop this malware from reaching untrusted websites you could use a firewall, or block the function.
 ### 4. Evidence:
 
 To start off with this analysis I ran it through virustotal and it was flagged to be malicious. It also showed it was packed using C++. In strings the functions: winnet.dll, advapi32.dll, ws2_32.dll, and kernel32. Next I used dependency walker to analyze the functions and found that Kernel32 was creating threads. Advapi was creating services and deleting services. Ws2_32 is accessing addresses. Winnet is showing a request to http and some website. I attempted to run the program but it wouldnt run because it is .dll and so I was unable to observe the effects it had using wireshark and regshot. 
