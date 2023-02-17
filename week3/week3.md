@@ -30,12 +30,13 @@ To start off with this analysis I ran it through virustotal and it was flagged t
 
 ### 1. Executive Summary:
 
+This malware was found to be a keylogger that messes with input an output of the system.
         
 ### 2. Indicators of Compromise:
-
+The indicator of compromise for this malware was that when I ran it the window appeared and disappeared right away. Additionally the operations 
         
 ### 3. Mitigations:
 
     
 ### 4. Evidence:
-To first analyze this malware I ran it through virus total and it was caught by 61 detectors. It also showed that it was packed using c++. It also showed a keylogger name. Next strings found nothing helpful and just bunch of random characters that were screaming at me. Whne using dependency walker all that came up was the function kernel32.dll which showed as using different functions such as deviceIOcontrol, createthread, createpipe, create directory etc. Next I ran the malware along the process monitor and it showed operation which create files and is querying for system information and mapping files. When I ran wireshark nothing suspicious came up. when comparing the before and after with regshot there were 10 changes. one change being cryptography seed.
+To first analyze this malware I ran it through virus total and it was caught by 61 detectors. It also showed that it was packed using c++. It also showed a keylogger name. Next strings found nothing helpful and just bunch of random characters that were screaming at me. When using dependency walker all that came up was the function kernel32.dll which showed as using different functions such as deviceIOcontrol, createthread, createpipe, create directory etc. Next I ran the malware along the process monitor and it showed operation which create files and is querying for system information and mapping files. When I ran wireshark nothing suspicious came up. when comparing the before and after with regshot there were 10 changes. one change being cryptography seed.
