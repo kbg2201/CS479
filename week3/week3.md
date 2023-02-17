@@ -19,6 +19,7 @@ www.practicalmalwareanalysis.com, and some folderpaths being accessed. I finally
 In summary, this malware was creating threads and trying to contact a website.
 ### 2. Indicators of Compromise:
 I was unable to run this malware because it was a .dll file but the indicatore that I saw was the operations of the functions such as accessing addresses and creating threads.
+
 ### 3. Mitigations:
 To stop this malware from reaching untrusted websites you could use a firewall, or block the function.
 ### 4. Evidence:
