@@ -45,4 +45,8 @@ EIP is the instruction pointer, you can control what is executed by the cpu.
 AL is one of three ways of refrencing to EAX which is one byte.
 
 - What is the result of the instruction `xor eax, eax` and where is it stored?
-The result of `xor eax, eax` is the register eax being set to zero. In other word its clears the EAX register.
+The result of `xor eax, eax` is the register eax being set to zero. It clears the EAX register.
+
+## Ghidra crackme
+
+Ghidra is software from the NSA that we began to use this week. To use Ghidra, I had to first install OpenJDK17 onto my linux machine in order for Ghidra to work and for the crack me that we were given to be tested. Initially I transferred the Ghidra file and Crackme file to my Linux VM through the shared folder. Just getting that working took a while because I was experiencing issues with my guest additions in order to get the shared folder functioning so I ultimately decided to just copy the files over by being the root user. After transferring the files over I had to unzip them and also chnage the permission on the files to allow myself to access them. Additionaly, I needed openJDK17 to run the program. I encountered some issues with downloading the openJDK17 due to some certificate errors and was able to fix that using the commands 'sudo update-ca-certificates' and 'sudo apt-get updates'. Finally I was able to open and run Ghidra. Once I got Ghidra going I opened the crack me file with it and then was analyzing the main code that was being executed. I observed that it was calling a function method to check the key. I next clicked on that method and was able to see the code for that as well. The code included an if statement which specified that the input modulus 1223 must equal zero to be correct and since anything modulus itself is zero I was able to conclude that the password is 1223.
