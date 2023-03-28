@@ -61,10 +61,6 @@ After that I began to code in java since it is my most practiced language. I fir
 #####Code:
 package keygenerator;
 
-/**
- *
- * @author kbgon
- */
 import java.util.Random;
 
 public class KeyGenerator {
