@@ -34,7 +34,30 @@ strcat("strawberry", "kiwi") = "strawberrykiwi";
 Then I tried the phrase strawberrykiwi and it was successful.
 
 #### CrackMe #4 Summary
+#####Analysis:
+
+When first running the file I was told that the pasword was "uncool" as the first error so then I spammed a bunch of more random characters for a really long password and got the error "Error: Password lacked motivation.". Since the guessing method did not work I tried string since it was successful before. After running it through strings there was nothing that could have been a password. The few words that stuck out such as "lizard,paper,rock,scissor,cupcake!!!" were not the passsword. However since I recognized the paper rock scissors as functions to pass requirements I knew I would need to analyze the code so I opened it in ghidra. When analyzing in ghidra I first started in the main function. The only way to exit the main function was through rock, next was paper, then scissors, and lizard,spock, and finally win had the successful message. Next I began tracing back from the sink in win. In order to get to win I needed to pass spock. Spock required that the password have the 16th character as '*'. To get to spock I had to pass lizard and lizard required the 2nd character in the password to be '2'. Following that was meeting the conditions of scissor. Scissors required that the pointer to the 1st characer of the password be less than  T and R which was the equivalent of password < 'R'. Additionally the first character must not equal 'I' and it will be equal to the character 'A' to pass.
+After scissors I analyzed paper since thats what gave access to scissors. In paper, the 8th character had to be was calculated to be the sum of 0x25 and 0x2e which resulted in the character 'S'. To get to the lizard function there was also a requirement that Uvar != 0 meaning that the result of the 8th character & 1 must be greater than 0. Too accomplish this, the 8th character - 0x25 must simply equal 0. This brought the conclusion that the 8th character = 0x25(%). To get to paper I analyzed rock and found that the 4th character needed to be '2'. Finally in main the password was required to be 16 characters or longer.
+
+#####Code process:
+
+To code the key generator I first wrote all the requirements that I found. 
+
+Requirements:
+
+- password >= 16
+- 4th char = '2'
+- 8th char = '%'
+- 1st char = 'A'
+- 2nd char = '2'
+- 16th char = '*'
+
+After that I began to code in java since it is my most practiced language. I first started by creating a generatekey function to use and imported random class to generate random values. Then created a charatcer array that I could add the values too. First I added the two starting and required values 'A' and '6'. Then generated random value for the 3rd charcter and assigned the 4th to '%'. next generated more random values until the 8th charcter and assigned that to be '%'. Again genereated random values for characters until the 16th character and assigned that '*'. Although the password could be longer I stuck with the password being equal to 16 characters for simplicity.
+
+
 #####Valid keys:
+- A6X2PFD%BGHWRKB*
+- A6O2DZW%FMQRNSZ*
 #####Code:
 package keygenerator;
 
@@ -49,6 +72,7 @@ public class KeyGenerator {
     String key = generateKey();
     System.out.println(key);
   }
+    return key.toString();
 
   public static String generateKey() {
     Random rand = new Random();
