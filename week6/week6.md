@@ -64,7 +64,7 @@ package keygenerator;
 import java.util.Random;
 
 public class KeyGenerator {
-  public static void main(String[] args) {
+ public static void main(String[] args) {
     String key = generateKey();
     System.out.println(key);
   }
@@ -91,4 +91,8 @@ public class KeyGenerator {
   }
 }
 
-#### CrackMe #5 Summary
+#### CrackMe #5 Summary 
+
+###### Analysis
+
+To get a first impression of what was happing I traced the functions of the code to find the sink with a successful output message. The flow began in main which led to rock, paper, scissors, lizard, spock and finally win. The flow did include alterntaive routes through loopback but that was the straight forward route. to define the conditions from each function I began analyzing the function spock first since it is what followed the win function.
