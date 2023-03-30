@@ -133,3 +133,9 @@ Requirements:
 - 11th char = 'A'
 - 14th char = '6'
 - 12th char = '*'
+
+After I used the same strategy as before and generated random values between the assigned and required characters in the key.
+
+######Valid keys:
+
+######Code:
