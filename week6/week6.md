@@ -95,4 +95,4 @@ public class KeyGenerator {
 
 ###### Analysis
 
-To get a first impression of what was happing I traced the functions of the code to find the sink with a successful output message. The flow began in main which led to rock, paper, scissors, lizard, spock and finally win. The flow did include alterntaive routes through loopback but that was the straight forward route. to define the conditions from each function I began analyzing the function spock first since it is what followed the win function.
+To get a first impression of what was happing I traced the functions of the code to find the sink with a successful output message. The flow began in main which led to rock, paper, scissors, lizard, spock and finally win. The flow did include alterntaive routes through loopback but that was the straight forward route. to define the conditions from each function I began analyzing the function spock first since it is what followed the win function. spock required the 12 character to be '*'. Before that lizard required that the 14th character be '6'. Before that scissors requires that charcter 11 be 'A'. Before that paper required that
