@@ -64,31 +64,30 @@ package keygenerator;
 import java.util.Random;
 
 public class KeyGenerator {
-  public static void main(String[] args) {
-    String key = generateKey();
-    System.out.println(key);
-  }
-    return key.toString();
-
-  public static String generateKey() {
-    Random rand = new Random();
-    StringBuilder key = new StringBuilder();
-    key.append('A');
-    key.append('6');
-    for (int i = 2; i < 3; i++) {
-      key.append((char) (rand.nextInt(26) + 'A'));
-    }
-    key.append('2');
-    for (int i = 4; i < 7; i++) {
-      key.append((char) (rand.nextInt(26) + 'A'));
-    }
-    key.append('%');
-    for (int i = 8; i < 15; i++) {
-      key.append((char) (rand.nextInt(26) + 'A'));
-    }
-    key.append('*');
-    return key.toString();
-  }
+public static void main(String[] args) {
+String key = generateKey();
+System.out.println(key);
+}
+return key.toString();
+public static String generateKey() {
+Random rand = new Random();
+StringBuilder key = new StringBuilder();
+key.append('A');
+key.append('6');
+for (int i = 2; i < 3; i++) {
+key.append((char) (rand.nextInt(26) + 'A'));
+}
+key.append('2');
+for (int i = 4; i < 7; i++) {
+key.append((char) (rand.nextInt(26) + 'A'));
+}
+key.append('%');
+for (int i = 8; i < 15; i++) {
+key.append((char) (rand.nextInt(26) + 'A'));
+}
+key.append('*');
+return key.toString();
+}
 }
 
 #### CrackMe #5 Summary 
