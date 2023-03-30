@@ -139,3 +139,66 @@ After I used the same strategy as before and generated random values between the
 ######Valid keys:
 
 ######Code:
+import java.util.Random;
+
+public class KeyGenerator2 {
+
+public static void main(String[] args) {
+
+String key = generateKey2();
+
+System.out.println(key);
+
+}
+
+public static String generateKey2() {
+
+Random rand = new Random();
+
+StringBuilder key = new StringBuilder();
+   
+for (int i = 0; i <= 5; i++) {
+
+key.append((char) (rand.nextInt(26) + 'A'));
+
+}
+
+key.append('Y');
+
+for (int i = 6; i < 7; i++) {
+
+key.append((char) (rand.nextInt(26) + 'A'));
+
+}
+
+key.append('#');
+
+for (int i = 8; i < 9; i++) {
+
+key.append((char) (rand.nextInt(26) + 'A'));
+
+}
+
+key.append('A');
+
+key.append('*');
+
+for (int i = 11; i < 12; i++) {
+
+key.append((char) (rand.nextInt(26) + 'A'));
+
+}
+
+key.append('6');
+
+for (int i = 12; i < 14; i++) {
+
+key.append((char) (rand.nextInt(26) + 'A'));
+
+}
+
+return key.toString();
+
+}
+
+}
