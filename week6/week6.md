@@ -64,7 +64,7 @@ package keygenerator;
 import java.util.Random;
 
 public class KeyGenerator {
- public static void main(String[] args) {
+  public static void main(String[] args) {
     String key = generateKey();
     System.out.println(key);
   }
@@ -99,3 +99,13 @@ To get a first impression of what was happing I traced the functions of the code
 
 ######Code Process:
 
+My first step was defining all the requirements for the key.
+
+Requirements:
+
+- key >= 16
+- 7th char = 'Y'
+- 9th char = '#'
+- 11th char = 'A'
+- 14th char = '6'
+- 12th char = '*'
