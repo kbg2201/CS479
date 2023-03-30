@@ -138,6 +138,9 @@ After I used the same strategy as before and generated random values between the
 
 ######Valid keys:
 
+- OBKSEQYQ#AA*U6PC 
+- HBGLBTYD#VA*G6PV 
+
 ######Code:
 import java.util.Random;
 
