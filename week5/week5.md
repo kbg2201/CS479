@@ -56,7 +56,7 @@ public class Main {
             key[i] = validChars[key[i] % validChars.length];
         }
 
-        // We know that positions 4, 9, and 14 must be a '-' char
+        // positions 4, 9, and 14 condition
         key[4] = 0x2d;
         key[9] = 0x2d;
         key[14] = 0x2d;
@@ -82,4 +82,5 @@ public class Main {
 This generated a correct key from one ide and not from another so I took it as working anyways.
 
 
-#### CrackMe #5 Summary
+#### CrackMe #4 Summary
+From demonstration of this crackme we saw that the file woul delete itself so I had to change it to be immutable and would not delete.
