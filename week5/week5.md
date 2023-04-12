@@ -83,4 +83,4 @@ This generated a correct key from one ide and not from another so I took it as w
 
 
 #### CrackMe #4 Summary
-From demonstration of this crackme we saw that the file woul delete itself so I had to change it to be immutable and would not delete.
+From demonstration of this crackme we saw that the file would delete itself so I had to change it to be immutable and would not delete. I download the file. Next i changed the permissions on it and owned it and made it immutable so it would not delete itsels with the chattr command. While analyzing the code i was able to find the sink that was named theEnd(). To reach the end there were different computations involving XOR and bit shifting and the PID. Because I am not well practiced in these computations my attempt was to just replicate the computations using the PID.
