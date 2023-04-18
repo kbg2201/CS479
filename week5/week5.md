@@ -83,4 +83,34 @@ This generated a correct key from one ide and not from another so I took it as w
 
 
 #### CrackMe #4 Summary
-From demonstration of this crackme we saw that the file would delete itself so I had to change it to be immutable and would not delete. I download the file. Next i changed the permissions on it and owned it and made it immutable so it would not delete itsels with the chattr command. While analyzing the code i was able to find the sink that was named theEnd(). To reach the end there were different computations involving XOR and bit shifting and the PID. Because I am not well practiced in these computations my attempt was to just replicate the computations using the PID.
+From demonstration of this crackme we saw that the file would delete itself so I had to change it to be immutable and would not delete. I download the file. Next i changed the permissions on it and owned it and made it immutable so it would not delete itself with the chattr command. While analyzing the code i was able to find the sink that was named theEnd(). To reach the end there were different computations involving XOR and bit shifting and the PID. Because I am not well practiced in these computations my attempt was to just replicate the computations using the PID. I did recognize that before actually using the PID and generating a key based on that specific PID there were 2 conditions that must be met such as the time being 1337 and the PID to be a specific value. These conditions were unreasonable and would automatically fail so they had to be skipped. Once they were skipped I could attempt generating the correct key based off the PID. To get the PID i ran the program with ltrace on a seperate terminal window. 
+
+Here is my attempt:
+```
+#include <stdio.h>
+#include <string.h>
+
+int main(int p) {
+  printf("Hello World\n");
+  char local_178 [356];
+  size_t sVar1;
+  int zero = 0;
+  int a = 0x35478;
+  char *b = "7030726e";
+  int c;
+  for (int i = 0; i < 7; i = i + 1) {
+    a = pid ^ a;
+    c = a + b[i] + 92;
+    //oil(&a,&c);
+    *&c = *&c ^ 4;
+    *&a = *&a | 0x2e39f3;
+    sprintf(local_178,"%d",c);
+    sVar1 = strlen(local_178);
+    strncat((char *)&zero,local_178,sVar1);
+    a = a << 7;
+  }
+
+
+  return 0;
+}
+```
