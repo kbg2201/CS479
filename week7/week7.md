@@ -3,14 +3,19 @@
 ---
 #### DLL Injection
 
-1) Prove that the loader is using DLL injection. (Don't forget a relevant snapshot in Ghidra.)
+1. Prove that the loader is using DLL injection. (Don't forget a relevant snapshot in Ghidra.)
 
-2) Identify the process that will be injected into. Seeing a string in Ghidra isn't sufficient -- explain how the process gets selected.
+The Loader is using DLL Injection and we are able to tell because of analyzing the decompiled code in ghidra. While analyizing I found
+with in one of the functions called toward the end of the main entry some suspicious libraries being used that indicate injection. the library calls include LoadLibraryA, GetProcAddress, OpenProcess, VirtualAllocEx, and CreateRemoteThread. The OpenProcess I believe could be used to target the desired process its injecting into. The createRemoteThread is certainly so it happens simultaneously with the process so it is undetected and disguised.
 
-3) Identify the entry point of the DLL injection. Where is DllMain?
 
-4) This malware does something every ______ seconds. How often, and where is the loop where that waiting happens?
 
-5) What does the malware do every _______ seconds?
+2. Identify the process that will be injected into. Seeing a string in Ghidra isn't sufficient -- explain how the process gets selected.
+
+3. Identify the entry point of the DLL injection. Where is DllMain?
+
+4. This malware does something every ______ seconds. How often, and where is the loop where that waiting happens?
+
+5. What does the malware do every _______ seconds?
 
  
