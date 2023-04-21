@@ -8,6 +8,8 @@
 The Loader is using DLL Injection and we are able to tell because of analyzing the decompiled code in ghidra. While analyizing I found
 with in one of the functions called toward the end of the main entry some suspicious libraries being used that indicate injection. the library calls include LoadLibraryA, GetProcAddress, OpenProcess, VirtualAllocEx, and CreateRemoteThread. The OpenProcess I believe could be used to target the desired process its injecting into. The createRemoteThread is certainly so it happens simultaneously with the process so it is undetected and disguised.
 
+![ScreenShot1](https://user-images.githubusercontent.com/111537927/233527625-484c508b-a059-4c15-ad6e-12431e0d913b.png)
+
 
 
 2. Identify the process that will be injected into. Seeing a string in Ghidra isn't sufficient -- explain how the process gets selected.
