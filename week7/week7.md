@@ -29,6 +29,8 @@ The entry point of the DLL injection would be in the .dll file which is the func
 
 4. This malware does something every ______ seconds. How often, and where is the loop where that waiting happens?
 
+This malware does something every 6000 seconds and it is from the lpStartAddress.
+
 5. What does the malware do every _______ seconds?
 
  
