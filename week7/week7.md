@@ -36,7 +36,7 @@ This malware does something every 6000 seconds and it is from the lpStartAddress
 
 5. What does the malware do every _______ seconds?
 
-I believe that this malware creates the thread every 6000 seconds. Additionally there is a function call that is for the actual malware function. To determine what the function is actually doing I followed multiple path but I am unsure of which contains that actual malware function. because ivar is what is being returned I followed that path to a function that I named something else. my logic was the function didsomething which is what I name the original call and then did somethingelse the name of the seconday function. this is what that function contains. 
+I believe that this malware creates the thread every 6000 seconds. Additionally there is a function call that is for the actual malware function. To determine what the function is actually doing I followed multiple path but I am unsure of which contains that actual malware function. because ivar is what is being returned I followed that path to a function that I named something else. my logic was the function didsomething which is what I name the original call and then did somethingelse the name of the secondary function. this is what that function contains. 
 
 
 ![Screenshot from 2023-04-20 22-31-29](https://user-images.githubusercontent.com/111537927/233548722-9ddb21e0-3c7c-4655-b1f3-66a6d4d555ca.png)
