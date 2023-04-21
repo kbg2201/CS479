@@ -36,4 +36,12 @@ This malware does something every 6000 seconds and it is from the lpStartAddress
 
 5. What does the malware do every _______ seconds?
 
+![Screenshot from 2023-04-20 22-31-29](https://user-images.githubusercontent.com/111537927/233548722-9ddb21e0-3c7c-4655-b1f3-66a6d4d555ca.png)
+
+![Screenshot from 2023-04-20 22-31-55](https://user-images.githubusercontent.com/111537927/233548766-09392d0f-cec8-4370-8e2d-907ca7d8f603.png)
+
+![Screenshot from 2023-04-20 22-32-24](https://user-images.githubusercontent.com/111537927/233548778-f68823d2-ebbf-4965-bdfa-9575d4b2f2b2.png)
+
+
+
  
