@@ -12,6 +12,8 @@ with in one of the functions called toward the end of the main entry some suspic
 
 2. Identify the process that will be injected into. Seeing a string in Ghidra isn't sufficient -- explain how the process gets selected.
 
+The process that will be injected into is explorer.exe. I assume this because it ia used in the ffunction call for the function that I labeled zero if like. This function is used to determine if it will accept the process. The process of deciding which process to inject to is involved with 2 different functions. The first function requires that the other function return 0 in order to return anf the other requires a 1. Here are the relevant functions that deal with selecting the process.
+
 3. Identify the entry point of the DLL injection. Where is DllMain?
 
 4. This malware does something every ______ seconds. How often, and where is the loop where that waiting happens?
