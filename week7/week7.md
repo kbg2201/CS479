@@ -16,6 +16,11 @@ with in one of the functions called toward the end of the main entry some suspic
 
 The process that will be injected into is explorer.exe. I assume this because it ia used in the ffunction call for the function that I labeled zero if like. This function is used to determine if it will accept the process. The process of deciding which process to inject to is involved with 2 different functions. The first function requires that the other function return 0 in order to return anf the other requires a 1. Here are the relevant functions that deal with selecting the process.
 
+![ScreenShot3](https://user-images.githubusercontent.com/111537927/233546011-4f1bf314-44f0-4db2-8ef4-98e2f77e42a1.png)
+
+![Screenshot2](https://user-images.githubusercontent.com/111537927/233546000-bbd88a99-2d84-42cb-a8f1-cba1e4b404ba.png)
+
+
 3. Identify the entry point of the DLL injection. Where is DllMain?
 
 The entry point of the DLL injection would be in the .dll file which is the function of malware. To find Dllmain I had to observe the .dll file. The .dll Main was named entry and had 3 parameters. 
