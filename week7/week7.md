@@ -15,6 +15,10 @@ with in one of the functions called toward the end of the main entry some suspic
 2. Identify the process that will be injected into. Seeing a string in Ghidra isn't sufficient -- explain how the process gets selected.
 
 The process that will be injected into is explorer.exe. I assume this because it ia used in the ffunction call for the function that I labeled zero if like. This function is used to determine if it will accept the process. The process of deciding which process to inject to is involved with 2 different functions. The first function requires that the other function return 0 in order to return anf the other requires a 1. Here are the relevant functions that deal with selecting the process.
+![Screenshot2](https://user-images.githubusercontent.com/111537927/233541666-aa9415c0-d643-4284-b63e-f1ebe50273b0.png)
+![ScreenShot3](https://user-images.githubusercontent.com/111537927/233541690-939b30ae-d00b-48f5-a384-8e75b57e68ad.png)
+
+
 
 3. Identify the entry point of the DLL injection. Where is DllMain?
 
