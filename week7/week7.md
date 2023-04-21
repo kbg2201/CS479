@@ -20,6 +20,8 @@ The process that will be injected into is explorer.exe. I assume this because it
 
 The entry point of the DLL injection would be in the .dll file which is the function of malware. To find Dllmain I had to observe the .dll file. The .dll Main was named entry and had 3 parameters. 
 
+![image](https://user-images.githubusercontent.com/111537927/233545901-b0073e51-886f-4208-b4c8-c039bfef6d41.png)
+
 4. This malware does something every ______ seconds. How often, and where is the loop where that waiting happens?
 
 5. What does the malware do every _______ seconds?
