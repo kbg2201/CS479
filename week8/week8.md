@@ -2,7 +2,8 @@
 ## Karina Gonzales
 ### MakeFile:
 ~~~
-all: shellcode.S
+all: 
+    shellcode.S
     as shellcode.S -o shellcode.o
     ld shellcode.o -o shellcode --oformat=binary
     rm shellcode.o
