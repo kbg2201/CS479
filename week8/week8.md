@@ -76,7 +76,7 @@ movq $0x3B %rax
 sys call
 ~~~
 
-Debugging command:
+Debugging commands:
 - run = r
 - breakpoint: b *0x_____
 - examine = x/i, x/i $rip
@@ -85,3 +85,8 @@ Debugging command:
 - follow rdx = x/x $ rdx
 - x/s $rdi
 - quit = q
+
+This is the number of errors I received that I got stuck on debugging.
+
+![Screenshot from 2023-04-26 10-34-06](https://user-images.githubusercontent.com/111537927/234657179-56e3da45-3ad0-49ff-a45f-758ff2cfba51.png)
+
