@@ -90,5 +90,9 @@ This is the number of errors I received that I got stuck on debugging.
 
 ![Screenshot from 2023-04-26 10-34-06](https://user-images.githubusercontent.com/111537927/234657179-56e3da45-3ad0-49ff-a45f-758ff2cfba51.png)
 
+I fixed some then had problems with the string.
+![Screenshot from 2023-04-26 11-08-30](https://user-images.githubusercontent.com/111537927/234665296-066cc54b-f738-4012-a389-12fc378b13e9.png)
+
+
 
 
