@@ -16,7 +16,7 @@ all:
 #include <stdio.h>
 #include <string.h>
 
-#define SHELLCODE_PATH "/YOUR/PATH/HERE"
+#define SHELLCODE_PATH "/home/aggie/Documents/shellcode"
 
 int main(int argc, char** argv) {
 
@@ -62,19 +62,23 @@ The RAX = 0x3B, the rdi = binsh_address, rsi = null_address, rdx  = null_address
 - call syscall.
 
 ~~~
-.text
-.global_start
+.section .text
+.globl _start
+
 _start:
-movq %rsp %rdx
-pushq %rdx
-movq %rsp %rsi
-movq rsp %rdx
-movq 00 68 73 2F 6E 69 62 2F
+movq $0, %rdx
+movq $0, %rsi
+movq 0x0068732F6E69622F, %rax
 pushq %rax
-movq %rsp %rdi
-movq $0x3B %rax
-sys call
+movq %rsp, %rdi
+movq %rsi, %rsi
+movq %rdx, %rdx
+movq $0x3B, %rax
+syscall
+
 ~~~
+
+The way I hoped this would work is by assigning 0 rsi and rdx, then assigning the first argument as /bin/sh0 in hex and then using rdx and rsi as their own pointers to null to set them to null and then assign rax 0x3B for execve and the call should have executed it but unfortunately it did not operate as expected and did not open the terminal.
 
 Debugging commands:
 - run = r
@@ -95,6 +99,12 @@ Probably due to the spaces and the hex value....
 ![Screenshot from 2023-04-26 11-08-30](https://user-images.githubusercontent.com/111537927/234665296-066cc54b-f738-4012-a389-12fc378b13e9.png)
 
 It compiled.
+
+Then I kept getting permission errors and once i used root I got errors that my shellcode file did not exist even though it did after some research I could not find what the source of my problem was. Next I ran the shellcode_tester file with gdb since it was the only one that seemed to work  but I wasnt confident if that was what I should do and SO i set breakpoints and went through the code but could not discern if there were ny logical errors that were stopping the shellcode from running. I also didnt recognice the the commands for shellcode that i thought i should be looking at. According to my python script my shellcode is 180 byes as is...
+
+![Screenshot from 2023-04-26 22-09-27](https://user-images.githubusercontent.com/111537927/234765281-707b86e2-92a1-4779-b009-bb3041b30785.png)
+![Screenshot from 2023-04-26 22-10-20](https://user-images.githubusercontent.com/111537927/234765287-88c9f592-4e41-450f-916b-fed8a67dc8a7.png)
+
 
 
 
