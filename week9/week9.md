@@ -5,5 +5,5 @@
 
 ### The Code:
 
-This is the code that I gathered from Ghidra that was used in the Pizza program.
+This is the code that I gathered from Ghidra that was used in the Pizza program. The code basically replicates a pizza transaction with a costumer. 
 
