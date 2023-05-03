@@ -105,6 +105,11 @@ Then I kept getting permission errors and once i used root I got errors that my 
 ![Screenshot from 2023-04-26 22-09-27](https://user-images.githubusercontent.com/111537927/234765281-707b86e2-92a1-4779-b009-bb3041b30785.png)
 ![Screenshot from 2023-04-26 22-10-20](https://user-images.githubusercontent.com/111537927/234765287-88c9f592-4e41-450f-916b-fed8a67dc8a7.png)
 
+I did try looking for a call to nothing to observe where my commands on the stack are but I could not find it. Here is an image of my disassemble main.
+
+![Screenshot from 2023-04-29 10-50-31](https://user-images.githubusercontent.com/111537927/235317653-1485ca83-3f95-4631-a4bb-b6765338de94.png)
+
+
 
 
 
