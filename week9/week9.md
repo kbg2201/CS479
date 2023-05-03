@@ -5,7 +5,7 @@
 
 ### The Code:
 
-This is the code that I gathered from Ghidra that was used in the Pizza program. The code basically replicates a pizza transaction with a costumer. 
+This is the code that I gathered from Ghidra that was used in the Pizza program. The code basically replicates a pizza transaction with a costumer. I believe that the use of printf allows us to use %p to expose its vulnerability.
 
 
 ![Screenshot from 2023-05-02 20-02-19](https://user-images.githubusercontent.com/111537927/235828898-fe196cce-f0b6-41b5-adae-cae4c8069295.png)
