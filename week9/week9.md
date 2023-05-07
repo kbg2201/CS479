@@ -26,7 +26,7 @@
 
  ![Screenshot from 2023-05-06 19-18-20](https://user-images.githubusercontent.com/111537927/236654265-6385bdf3-aeea-45f4-98c4-c18d768d1ddc.png)
  
- Here is the code I developed:
+ Here is the pwntools code:
  
  ```
  #!/usr/bin/env python3
