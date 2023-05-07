@@ -72,6 +72,16 @@ rip = core.rip
 
 top_of_stack = core.read(rsp,8)
 top_of_stack_1 = core.read(rsp,8)
+
+rip_offset = cyclic_find(rsp)
+
+print(f"rsp: {hex(rsp)}")
+print(f"rbp: {hex(rbp)}")
+print(f"rip: {hex(rip)}")
+
+print(f"Top of the stack contains: {hex(int.from_bytes(top_of_stack,'little'))}")
+print(f" stack + 1 contains: {hex(int.from_bytes(top_of_stack_1,'little'))}")
+print(f"the rip offset is {hex(rip_offset)}")
                                                           
  ```
 
