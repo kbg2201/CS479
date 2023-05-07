@@ -85,5 +85,6 @@ print(f"the rip offset is {hex(rip_offset)}")
                                                           
  ```
 
+I am unsure if I was required to attach specific shell code to this to be comepletely honest or just show how we have learned to get information from the core file and use that for the buffer overflow... 
  
  
